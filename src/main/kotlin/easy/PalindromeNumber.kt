@@ -1,3 +1,5 @@
+package easy
+
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.math.pow

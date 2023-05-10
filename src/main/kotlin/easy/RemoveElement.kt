@@ -1,3 +1,5 @@
+package easy
+
 class RemoveElement {
     fun removeElement2(nums: IntArray, `val`: Int): Int {
         var lastNotToRemoveIdx = 0

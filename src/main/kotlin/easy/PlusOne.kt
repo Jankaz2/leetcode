@@ -1,3 +1,5 @@
+package easy
+
 import java.math.BigInteger
 
 class PlusOne {

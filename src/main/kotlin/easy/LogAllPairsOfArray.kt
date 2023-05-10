@@ -1,3 +1,5 @@
+package easy
+
 class LogAllPairsOfArray {
     fun logAllPairs(array: IntArray) {
         for (i in array) {

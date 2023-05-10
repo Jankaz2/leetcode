@@ -1,3 +1,5 @@
+package easy
+
 class TwoSum {
     fun twoSum(nums: IntArray = intArrayOf(2, 5, 5, 11), target: Int): IntArray {
         val numToIndex: MutableMap<Int, Int> = mutableMapOf()

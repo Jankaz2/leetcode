@@ -1,3 +1,5 @@
+package easy
+
 class IndexOfTheFirstOccurrenceInString {
 
     fun strStr(haystack: String, needle: String): Int {

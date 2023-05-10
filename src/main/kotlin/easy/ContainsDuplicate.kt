@@ -1,3 +1,5 @@
+package easy
+
 class ContainsDuplicate {
     fun containsDuplicate(nums: IntArray): Boolean {
         val set = hashSetOf<Int>()

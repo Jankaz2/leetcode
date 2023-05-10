@@ -1,3 +1,5 @@
+package easy
+
 class AddBinary {
 
     fun addBinary2(a: String, b: String): String? {

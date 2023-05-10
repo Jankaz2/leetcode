@@ -1,3 +1,5 @@
+package easy
+
 class SearchInsert {
     fun searchInsert(nums: IntArray, target: Int): Int {
         nums.forEachIndexed { i, num ->

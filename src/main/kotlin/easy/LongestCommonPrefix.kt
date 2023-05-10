@@ -1,3 +1,5 @@
+package easy
+
 class LongestCommonPrefix {
 
     fun longestCommonPrefix(strs: Array<String>): String {

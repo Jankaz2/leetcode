@@ -1,3 +1,5 @@
+package easy
+
 class RomanToInteger {
 
     fun romanToInt(s: String): Int {

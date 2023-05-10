@@ -1,3 +1,5 @@
+package easy
+
 class ArraysContainCommonElement {
 
     fun arraysContainCommonElement(arr1: IntArray, arr2: IntArray): Boolean {
