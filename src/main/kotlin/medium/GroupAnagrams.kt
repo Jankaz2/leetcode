@@ -14,7 +14,3 @@ class GroupAnagrams {
     }
 }
 
-fun main() {
-    val solution = GroupAnagrams()
-
-}
