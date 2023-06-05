@@ -29,4 +29,5 @@ fun printTreeNodes(root: TreeNode?) {
         node.left?.let { queue.add(it) }
         node.right?.let { queue.add(it) }
     }
+    println()
 }
