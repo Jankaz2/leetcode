@@ -16,6 +16,11 @@ class TreeNode(var `val`: Int) {
     var right: TreeNode? = null
 }
 
+class TrieNode {
+    var children = mutableMapOf<Char, TrieNode>()
+    var endOfWord = false
+}
+
 fun printTreeNodes(root: TreeNode?) {
     if (root == null) return
 
@@ -30,4 +35,15 @@ fun printTreeNodes(root: TreeNode?) {
         node.right?.let { queue.add(it) }
     }
     println()
+}
+
+fun IntRange.toIntArray(): IntArray {
+    if (last < first)
+        return IntArray(0)
+
+    val result = IntArray(last - first + 1)
+    var index = 0
+    for (element in this)
+        result[index++] = element
+    return result
 }
