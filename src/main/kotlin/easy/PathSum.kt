@@ -3,7 +3,7 @@ package easy
 import TreeNode
 import java.util.*
 
-class HasPathSum {
+class PathSum {
     fun hasPathSum(root: TreeNode?, targetSum: Int): Boolean {
         if (root == null) return false
 
@@ -33,22 +33,17 @@ class HasPathSum {
     }
 
     fun hasPathSumRevursive(root: TreeNode?, targetSum: Int): Boolean {
-        if (root == null) return false
-        return hasPathSumRecursiveHelper(root, targetSum, 0)
-    }
-
-    private fun hasPathSumRecursiveHelper(node: TreeNode?, targetSum: Int, nodeSum: Int): Boolean =
-        when {
-            node == null -> false
-            node.left == null && node.right == null && node.`val` + nodeSum == targetSum -> true
-            else -> hasPathSumRecursiveHelper(node.left, targetSum, node.`val` + nodeSum)
-                    || hasPathSumRecursiveHelper(node.right, targetSum, node.`val` + nodeSum)
+        return when {
+            root == null -> false
+            root.left == null && root.right == null -> targetSum - root.`val` == 0
+            else -> hasPathSumRevursive(root.left, targetSum - root.`val`)
+                    || hasPathSumRevursive(root.right, targetSum - root.`val`)
         }
-
+    }
 }
 
 fun main() {
-    val solution = HasPathSum()
+    val solution = PathSum()
     val root = TreeNode(5)
     root.left = TreeNode(4)
     root.left!!.left = TreeNode(11)
@@ -61,5 +56,5 @@ fun main() {
     root.right!!.right = TreeNode(4)
     root.right!!.right!!.right = TreeNode(1)
 
-    solution.hasPathSum(root, 22)
+    solution.hasPathSumRevursive(root, 22)
 }
