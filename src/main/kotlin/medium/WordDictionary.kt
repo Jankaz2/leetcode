@@ -23,7 +23,6 @@ class WordDictionary {
             for (i in j until word.length) {
                 when (val c = word[i]) {
                     '.' -> {
-                        val v = current.children.values
                         for (child in current.children.values) {
                             return dfs(i + 1, child)
                         }
