@@ -21,6 +21,10 @@ class TrieNode {
     var endOfWord = false
 }
 
+class Node(var `val`: Int) {
+    var neighbors = ArrayList<Node?>()
+}
+
 fun printTreeNodes(root: TreeNode?) {
     if (root == null) return
 
