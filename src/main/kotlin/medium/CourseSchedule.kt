@@ -2,7 +2,7 @@ package medium
 
 class CourseSchedule {
     fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
-        if (prerequisites.isEmpty()) return false
+        if (prerequisites.isEmpty()) return true
 
         val visited = mutableSetOf<Int>()
         val adjacencyMap = mutableMapOf<Int, MutableList<Int>>()
