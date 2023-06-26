@@ -4,12 +4,11 @@ class NumberOfConnectedComponentsInAnUndirectedGraph {
 
     fun countComponents(n:Int, edges:Array<IntArray>): Int {
         val parents = ArrayList<Int>()
-        val ranks = ArrayList<Int>()
+        val ranks = Array(n) { 1 }
         var counter = n
 
         for (i in 0 until n) {
             parents.add(i)
-            ranks.add(i)
         }
 
         fun find(n: Int): Int {
