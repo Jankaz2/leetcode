@@ -1,31 +1,32 @@
 package graphs
 
 class UnionFind(n: Int) {
-    private val par = IntArray(n) { it }
+    private val parent = IntArray(n) { it }
     private val rank = IntArray(n) { 1 }
 
     fun find(x: Int): Int {
-        var xVar = x
-        while (xVar != par[xVar]) {
-            par[xVar] = par[par[xVar]]
-            xVar = par[xVar]
+        var temp = parent[x]
+        while (temp != parent[temp]) {
+            parent[temp] = parent[parent[temp]]
+            temp = parent[temp]
         }
-        return xVar
+        return temp
     }
 
     fun union(x1: Int, x2: Int): Boolean {
         val p1 = find(x1)
         val p2 = find(x2)
-        if (p1 == p2) {
-            return false
-        }
+
+        if (p1 == p2) return false
+
         if (rank[p1] > rank[p2]) {
-            par[p2] = p1
+            rank[p2] = p1
             rank[p1] += rank[p2]
         } else {
-            par[p1] = p2
+            rank[p1] = p2
             rank[p2] += rank[p1]
         }
+
         return true
     }
 }
@@ -35,31 +36,28 @@ class AccountsMerge {
         val uf = UnionFind(accounts.size)
         val emailToAcc = mutableMapOf<String, Int>()
 
-        for ((i, a) in accounts.withIndex()) {
-            for (e in a.subList(1, a.size)) {
-                if (e in emailToAcc) {
-                    uf.union(i, emailToAcc[e]!!)
+        for ((index, acc) in accounts.withIndex()) {
+            for (email in acc.subList(1, acc.size)) {
+                if (email in emailToAcc) {
+                    uf.union(index, emailToAcc[email]!!)
                 } else {
-                    emailToAcc[e] = i
+                    emailToAcc[email] = index
                 }
             }
         }
 
         val emailGroup = mutableMapOf<Int, MutableList<String>>()
-        for ((e, i) in emailToAcc) {
-            val leader = uf.find(i)
-            emailGroup
-                .getOrPut(leader) {
-                    mutableListOf()
-                }
-                .add(e)
+        for ((email, index) in emailToAcc) {
+            val leader = uf.find(index)
+            emailGroup.getOrPut(leader) { mutableListOf() }.add(email)
         }
 
         val res = mutableListOf<List<String>>()
-        for ((i, emails) in emailGroup) {
-            val name = accounts[i][0]
+        for ((leader, emails) in emailGroup) {
+            val name = accounts[leader][0]
             res.add(listOf(name) + emails.sorted())
         }
+
         return res
     }
 }
