@@ -2,16 +2,18 @@ package `1ddp`
 
 class HouseRobber {
     fun rob(nums: IntArray): Int {
-        if (nums.size == 1) return nums[0]
-        val dp = Array(nums.size) { 0 }
-        dp[0] = nums[0]
-        dp[1] = maxOf(nums[0], nums[1])
+        if (nums.isEmpty()) return 0
 
-        for (i in 2 until nums.size) {
-            dp[i] += maxOf(dp[i - 2] + nums[i], dp[i - 1])
+        var prev1 = 0
+        var prev2 = 0
+
+        for (num in nums) {
+            val tmp = prev1
+            prev1 = maxOf(prev2 + num, prev1)
+            prev2 = tmp
         }
 
-        return dp.last()
+        return prev1
     }
 }
 
