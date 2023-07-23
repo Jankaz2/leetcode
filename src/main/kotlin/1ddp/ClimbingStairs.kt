@@ -1,4 +1,4 @@
-package `1d_dp`
+package `1ddp`
 
 class ClimbingStairs {
     fun climbStairs(n: Int): Int {
