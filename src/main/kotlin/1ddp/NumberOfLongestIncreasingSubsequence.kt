@@ -2,7 +2,7 @@ package `1ddp`
 
 class NumberOfLongestIncreasingSubsequence {
     fun findNumberOfLIS(nums: IntArray): Int {
-        val dp = mutableMapOf<Int, Pair<Int, Int>>() // length of LIS, counter
+        val dp = mutableMapOf<Int, Pair<Int, Int>>() // the pair is (length of LIS, counter)
         var globalMaxLen = 0
         var globalMaxCount = 0
 
