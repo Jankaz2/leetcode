@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class DeleteEndEarn {
     data class ValueCount(val value: Int, var count: Int)

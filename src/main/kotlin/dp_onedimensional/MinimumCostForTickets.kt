@@ -1,6 +1,4 @@
-package `1ddp`
-
-import toIntArray
+package dp_onedimensional
 
 class MinimumCostForTickets {
     fun mincostTickets(days: IntArray, costs: IntArray): Int {

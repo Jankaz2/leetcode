@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class MaximumSubarrayMinProduct {
     fun maxSumMinProduct(nums: IntArray): Int {

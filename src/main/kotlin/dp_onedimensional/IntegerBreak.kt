@@ -1,6 +1,4 @@
-package `1ddp`
-
-import toIntArray
+package dp_onedimensional
 
 class IntegerBreak {
 

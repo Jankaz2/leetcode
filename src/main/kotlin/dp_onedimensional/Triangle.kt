@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class Triangle {
     fun minimumTotal(triangle: List<List<Int>>): Int {

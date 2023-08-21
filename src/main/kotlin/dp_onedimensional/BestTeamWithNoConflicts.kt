@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class BestTeamWithNoConflicts {
     fun bestTeamScore(scores: IntArray, ages: IntArray): Int {

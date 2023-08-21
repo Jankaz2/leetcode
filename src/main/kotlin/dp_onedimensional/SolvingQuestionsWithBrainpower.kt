@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class SolvingQuestionsWithBrainpower {
     fun mostPoints(questions: Array<IntArray>): Long {

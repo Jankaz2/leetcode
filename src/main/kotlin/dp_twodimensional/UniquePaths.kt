@@ -1,4 +1,4 @@
-package `2dp`
+package dp_twodimensional
 
 class UniquePaths {
     fun uniquePaths(m: Int, n: Int): Int {

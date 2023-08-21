@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class PartitionEqualSubsetSum {
     fun canPartition(nums: IntArray): Boolean {

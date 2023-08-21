@@ -1,4 +1,4 @@
-package `1ddp`
+package dp_onedimensional
 
 class CombinationSum4 {
     fun combinationSum4(nums: IntArray, target: Int): Int {
