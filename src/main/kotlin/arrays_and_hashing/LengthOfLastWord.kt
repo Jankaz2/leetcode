@@ -1,4 +1,4 @@
-package easy
+package arrays_and_hashing
 
 class LengthOfLastWord {
     fun lengthOfLastWord(s: String): Int {
