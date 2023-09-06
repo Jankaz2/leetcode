@@ -1,4 +1,4 @@
-package medium
+package arrays_and_hashing
 
 class ValidSudoku {
     fun isValidSudoku(board: Array<CharArray>): Boolean {

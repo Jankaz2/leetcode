@@ -1,4 +1,4 @@
-package easy
+package arrays_and_hashing
 
 class LongestCommonPrefix {
 
